@@ -1,3 +1,8 @@
+# type python3 in terminal to get python interpreter
+# run file with python3 file_name
+# variables are stored in memory
+# python is an interpreted language
+
 # # writing shapes
 # print('   /|')
 # print('  / |')
@@ -73,6 +78,9 @@
 # numbers.sort() # put in alphabetical order / low-high numbers
 # numbers.reverse()
 # numbers_two = numbers.copy() # copy list
+
+# list(range(1, 6))
+# # => [1, 2, 3, 4, 5]
 
 # # tuples
 # # essentially same as list, but are immutable
@@ -223,21 +231,61 @@
 #     print('Invalid Input')
 #     print(err)
 
+# # read files
+# open('file_path', 'w') # w = write_file
+# open('file_path', 'a') # a = append_file (but not change)
+# open('file_path', 'r+') # r+ = read_file & write_file
+# employee_file = open('employees.txt', 'r') # r = read_file
+# print(employee_file.readable()) # returns boolean bc we set it to read mode (with 'r')
+# print(employee_file.read()) # prints file to console
+# print(employee_file.readline()) # prints first line
+# print(employee_file.readlines()[0]) # prints each line as an array element
+# for employee in employee_file.readlines(): # loop and prints each line
+#     print(employee)
+
+# appending files (careful - permanent)
+# employee_file = open('employees.txt', 'a')
+# # if you used 'w' it would empty the file and just write what your write below
+# # if you change the file name, it will create it and write what you write
+# employee_file.write('\nToby - Human Resources')
+
+# employee_file.close() # always close the file when you're done
+
+# # importing files
+# import file_name
+# print(file_name.available_functions())
+# # google python modules
+
+# # classes (the template) and objects (the actual students)
+# class Student:
+#     # define properties in the __init__ method
+#     def __init__(self, name, major, gpa, is_senior):
+#         self.name = name
+#         self.major = major
+#         self.gpa = gpa
+#         self.is_senior = is_senior
+
+# freshman = Student('Jon', 'Econ', 3.1, False)
+
+# # print(freshman.name)
+
+# # class inheritance
+# class Chef:
+#     # define methods normally
+#     def make_chicken(self):
+#         print('chef made chicken')
+#     def make_salad(self):
+#         print('chef made salad')
+
+# class ChineseChef(Chef):
+#     def make_fried_rice(self):
+#         print('made fried rice')
+
+# ChineseChef().make_salad()
 
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-print()
+# print()
