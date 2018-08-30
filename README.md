@@ -1,2 +1,3 @@
-# python-practice
-Explains python syntax and methods
+# Guides
+Explains python syntax, properties and methods
+Explains terminal commands
