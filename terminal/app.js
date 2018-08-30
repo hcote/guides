@@ -72,49 +72,25 @@ $ sed 's/snow/rain/' file_name
 // s for substitute 'snow' with 'rain' (above will only substitute the first encounter)
 $ sed 's/snow/rain/g' file_name
 // g stands for global and will replace all instances of snow with rain
-$
-$
-$
-$
-$
-$
-$
-$
-$
-$
-$
-$
-$
-$
-$
-$
-$
-$
-$
-$
-$
-$
-$
-$
-$
-$
-$
-$
-$
-$
-$
-$
-$
-$
-$
-$
-$
-$
-$
-$
-$
-$
-$
-$
-$
-$
+$ nano file_name
+// creates new environment (ctrl + o => save) (crtl + x => exit)
+// nano is the command line text editor (only accepts keyboard input)
+$ source path_to_file_name
+// runs the file
+// ~/.bash_profile is the name of the file generally used to store environment settings
+$ nano ~/.bash_profile
+// in the file, type: alias pd = "pwd"
+// alias allows you to create keyboard shortcuts
+$ source ~/.bash_profile
+// this makes the pd alias available in the current session
+$ pd // now returns pwd stdout
+$ history
+// lists all the commands you've used in this session
+$ export USER="Hunter" (in nano)
+$ source ~/.bash_profile
+$ echo $USER // returns Hunter
+// USER is now an environment variable
+// export makes it available to child sessions of the terminal
+$ export PS1=">> " (in nano)
+// changes the temrinal promt to >> from $
+$ echo $HOME // returns home directory
