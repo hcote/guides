@@ -69,3 +69,5 @@ class SUV extends Car {
 const escalade = new SUV(4, 'V8', 'black', 'Cadilac');
 console.log(escalade);
 console.log(escalade.myBrand());
+
+// to leverage another class, you extend it
