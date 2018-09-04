@@ -70,7 +70,7 @@ newDiv.appendChild(newDivText); // bc it's going inside the div
 var container = document.querySelector('header .container');
 var h1 = document.querySelector('header h1');
 // insertBedore(what we are inserting, what its being inserted before)
-container.insertBedore(newDiv, h1);
+container.insertBefore(newDiv, h1);
 
 // vid 3 - events
 
