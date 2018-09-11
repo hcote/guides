@@ -1,4 +1,6 @@
 // Vid 1 - capturing DOM nodes
+// DOM is made up of nodes, which you target
+
 
 // log the DOM
 console.dir(document);
@@ -71,6 +73,17 @@ var container = document.querySelector('header .container');
 var h1 = document.querySelector('header h1');
 // insertBedore(what we are inserting, what its being inserted before)
 container.insertBefore(newDiv, h1);
+
+// OR YOU CAN DO:
+
+var myNode = document.getElementById('someDomNode');
+var myElement = document.createElement('div');
+myNode.appendChild(myElement);
+
+// to remove an element on click
+myNode.addEventListener('click', function(e) {
+  e.target.parentNode.removeChild(e.target);
+}, false)
 
 // vid 3 - events
 
