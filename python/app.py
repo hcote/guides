@@ -1,7 +1,7 @@
-type python3 || python in terminal to get python interpreter
-run file with python3 file_name
-variables are stored in memory
-python is an interpreted language
+# type python3 || python in terminal to get python interpreter
+# run file with python3 file_name
+# variables are stored in memory
+# python is an interpreted language
 
 # writing shapes
 print('   /|')
