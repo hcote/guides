@@ -1,0 +1,92 @@
+language to manage relational database
+all sql statements are called queries 
+
+SELECT * FROM Countries WHERE Continent = 'Europe';
+SELECT columns FROM table WHERE Column_Header_Here = 'row data'; (skip to line 40 for clarity)
+this is a statement saying:
+get all columns from countries table where continent row equal to 'Europe'
+FROM clause specifies the table to get data from 
+WHERE specifies the rows and requires an expression
+the expression here is Continent = 'Europe';
+
+Functions of a db are CRUD
+R - SELECT * FROM Customers
+C - INSERT INTO Table (columns) 
+        VALUES (data);
+U - UPDATE Customer
+        SET 
+            Address = '123 Columbus Ave',
+            Zip = '12345'
+        WHERE id = 5;
+
+D - DELETE FROM Customer WHERE id = 5;
+
+WHERE selects which rows (?)
+
+Relational db has tables with rows and columns 
+A row is a record (used interchangably)
+A column is a field (used interchangably)
+Each row has a unique key (primary key), and a table must have one
+The keys are used to create relationships between tables
+A table may have a column with another table's primary key
+    This is a foreign key in that table (but the primary key of another table)
+This is how you use join queries
+
+SELECT 'query' AS Result 
+(makes the returned data have a column header 'Result')
+SELECT * FROM Country ORDER BY Name;
+(returns all rows and columns alphabetically sorted by Name column)
+SELECT Name, GDP FROM Country 
+(returns the name and gdp columns with all records)
+SELECT Name, Continent, Region FROM Country WHERE Continent = 'Europe';
+(returns a table with N, C, R columns, from the Country table, and only shows rows where the Continent(this is the column) is Europe)
+SELECT Name, Continent, Region FROM Country WHERE Continent = 'Europe' ORDER BY Name LIMIT 5;
+(returns first 5 records in alphabetical order)
+SELECT COUNT(*) FROM Country WHERE Population > 1000000 AND Continent = 'Europe';
+(returns one column with one row showing number of rows that would have been returned)
+SELECT COUNT(LifeExpectancy) FROM Country
+(returns num rows with values i.e. does NOT count rows where value = NULL)
+
+ADDING ROWS --------------------
+INSERT INTO Customer (name, state) VALUES ('john', 'RI');
+(values must be in the same order as columns listed) 
+*can omit adding column names if you're adding data to every column
+
+another, more complex way can be:
+INSERT INTO Customer (name state) SELECT name, state FROM other-table
+here you're inserting values from another table into this table
+
+UPDATING ROWS ------------------
+UPDATE Customer SET address = '123 Medfield St', zip = '12345' WHERE id = 5;
+UPDATE table SET column = value, another = another-value WHERE id column = 5 (id = primary key)
+
+DELETING ROWS ------------------
+DELETE FROM Customer WHERE id = 5;
+this will delete all instances of this
+deleted rows cannot be easily recovered
+
+CREATING TABLES ----------------
+CREATE TABLE test-table (
+    a INTEGER,
+    b TEXT
+);
+in the () above, we're creating the schema
+column name 'a' will contain integers
+column name 'b' will contain strings
+
+INSERT INTO test VALUES(1, 'text for column b');
+
+DELETING TABLES -----------------
+DROP TABLE test; or...
+DROP TABLE IF EXISTS test;
+
+NULL -----------------
+SELECT * FROM Customer WHERE name IS NULL 
+(cannot write WHERE name = NULL)
+
+CREATE TABLE test-table (
+    a INTEGER NOT NULL,
+    b TEXT
+);
+INSERT INTO test-table (b) VALUES ('hello world')
+=> throws an error bc this is saying column 'a' is NULL
