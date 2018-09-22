@@ -8,7 +8,7 @@ $ ls -t
 // can combine to do:
 $ ls -alt
 $ cp file_one file_two
-// copies contents of file_one into file_two (both exist - you're not creating a new file here)
+// copies contents of file_one into file_two (both exist - youre not creating a new file here)
 $ cp file_one ./ // (first argument is file, second is destination of copied file)
 // THIS is how you duplicate/copy a file
 $ cp * folder/
@@ -50,7 +50,7 @@ $ cat volcanoes.txt | wc
 // the stdout of 'cat volcanoes.txt' is the stdin of wc
 // the '|' takes the standard output of the command on the left, and 'pipes' it as standard input to the command on the right
 $ cat volcanoes.txt | wc | cat > islands.txt
-// Multiple |'s can be chained together. Here the standard output of cat volcanoes.txt is "piped" (attached) to the wc command. The standard output of wc is then "piped" to cat. Finally, the standard output of cat is redirected to islands.txt.
+// Multiple |s can be chained together. Here the standard output of cat volcanoes.txt is "piped" (attached) to the wc command. The standard output of wc is then "piped" to cat. Finally, the standard output of cat is redirected to islands.txt.
 $ sort file_name
 $ cat lakes.txt | sort > sorted-lakes.txt
 // prints each line in alphabetical order
@@ -85,7 +85,7 @@ $ source ~/.bash_profile
 // this makes the pd alias available in the current session
 $ pd // now returns pwd stdout
 $ history
-// lists all the commands you've used in this session
+// lists all the commands youve used in this session
 $ export USER="Hunter" (in nano)
 $ source ~/.bash_profile
 $ echo $USER // returns Hunter

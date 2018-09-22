@@ -136,3 +136,18 @@ SELECT DISTINCT a, b, FROM test-table
 ORDERING
 Select Name, Continent FROM Country ORDER BY Continent, Name 
 (orders countries in Afria in alphabetical order, then by Asia, etc.)
+
+JOINS -----------------
+
+INNER JOIN is the default and simplest and most common
+LEFT OUTER JOIN includes rows where the condition is met,
+    and all the rows from the table on the left where the 
+    condition is not met 
+RIGHT OUTER JOIN is the same but table on the right
+    (right joins aren't always supported)
+
+Many to many relationships
+... condusing
+
+STRINGS -------------
+if you need to use an apostraphe, use ''
