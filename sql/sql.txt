@@ -86,7 +86,53 @@ SELECT * FROM Customer WHERE name IS NULL
 
 CREATE TABLE test-table (
     a INTEGER NOT NULL,
-    b TEXT
+    b TEXT,
+    c TEXT DEFAULT 'panda',
+    d TEXT UNIQUE
 );
-INSERT INTO test-table (b) VALUES ('hello world')
+INSERT INTO test-table (b, d) VALUES ('hello world', 'im unique')
 => throws an error bc this is saying column 'a' is NULL
+=> column c value will be 'panda' unless otherwise specified
+=> d column value must be unique (but multiple NULL values are allowed bc its no value)
+
+ALTER TABLE test-table ADD e TEXT DEFAULT 'hi';
+(altering schema)
+
+ID columns ------------- (this syntax is not standard across all systems)
+CREATE TABLE test (
+    id INTEGER PRIMARY KEY,
+    colone TEXT,
+    coltwo TEXT
+)
+=> automatically creates ids in numerical order 
+
+FILTERING DATA ----------
+SELECT * FROM Country WHERE Population > 1000000 OR Population IS NULL ORDER BY Population DESC;
+WHERE takes a boolean expression (returns results that return true)
+you can do OR, as well as AND (Population > 1000000 AND Continent = 'Europe')
+
+SELECT * FROM Country WHERE Name LIKE '%islands%';
+(returns records where the Name column includes the word 'islands')
+the % sign acts like a wildcard and will match your word that IS FOLLOWED BY any character
+    (so will return 'Cayman Islands' as well as FifiIslands...)
+    doing '%island' will return only records that end in 'island'
+    doing 'island%' will return only records that begin in 'island'
+SELECT * FROM Country WHERE Name LIKE '_a%';
+(returns all countries where 'a' is the second letter i.e. Bahamas, Cayman Islands)
+
+SELECT * FROM Country WHERE Continents IN ('Europe', 'Asia');
+
+REMOVING DUPS
+SELECT DISTINCT Continent FROM Country;
+(onyl returns distinct values)
+SELECT DISTINCT a, b, FROM test-table 
+(returns disctinct value pairs)
+    will return:
+    1, 2
+    1, 1
+    2, 1
+    2, 2
+
+ORDERING
+Select Name, Continent FROM Country ORDER BY Continent, Name 
+(orders countries in Afria in alphabetical order, then by Asia, etc.)
