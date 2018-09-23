@@ -62,8 +62,11 @@ print('I love ' + celebrity)
 people = ['john', 'tony', 'jim', 'oscar', 'tim', 'james']
 people[4] = 'karen'
 print(people[-1]) # use negatives to start at end of list (not zero indexed from the reverse)
-print(people[1:]) # returns items starting at index 1 to the end of the array
+# ['james']
+print(people[3:]) # returns items starting at index 3 to the end of the array
+# ['oscar', 'tim', 'james']
 print(people[2:4]) # returns elements starting at index 2 up to but not including 4
+# ['jim', 'oscar']
 
 # list functions
 numbers = [1, 5, 8, 13, 22, 3, 8, 9, 33]
@@ -167,15 +170,15 @@ month_conversions = {
 print(month_conversions['Jan']) # returns value of the key referenced
 print(month_conversions.get(3, 'Default return if key isnt found'))
 
-while loop
-i++ does not exist in python
+# while loop
+# i++ does not exist in python
 i = 1
 while i <= 10:
     print(i)
     i += 1
 
-GAME using while loop
-three guesses to guess secret word
+# GAME using while loop
+# three guesses to guess secret word
 i = 1
 secret  = 'llama'
 guess = ''
@@ -243,7 +246,7 @@ print(employee_file.readlines()[0]) # prints each line as an array element
 for employee in employee_file.readlines(): # loop and prints each line
     print(employee)
 
-appending files (careful - permanent)
+# appending files (careful - permanent)
 employee_file = open('employees.txt', 'a')
 # if you used 'w' it would empty the file and just write what your write below
 # if you change the file name, it will create it and write what you write
