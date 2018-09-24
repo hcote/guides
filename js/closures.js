@@ -1,6 +1,6 @@
 // CLOSURES
 
-// scope refers to the region where variab;es are defined
+// scope refers to the region where variables are defined
 // lexical scope refers to when a function has an inner function
     // the inner fn has access to the parent variables
     // the parent does not have access to the child fns variables
@@ -21,9 +21,9 @@ function myObject() {
 }
 
 var myThing = myObject();
-mything.display(); // 1
-mything.increment();
-mythin.display(); // 2
+myThing.display(); // 1
+myThing.increment();
+myThing.display(); // 2
 
 var otherThing = myObject();
 otherThing.display(); // 1

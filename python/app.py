@@ -152,6 +152,7 @@ else:
 
 # dictionary (objects)
 # keys MUST be unique
+# A DICTIONARY IS A HASH TABLE
 month_conversions = {
     'Jan': 'January',
     'Feb': 'February',
@@ -287,8 +288,61 @@ class ChineseChef(Chef):
 ChineseChef().make_salad()
 
 
+# Interview Code -------------------
+# know for loops, while loops inside and out
 
+# Fibinacci Sequence
+a, b = 0, 1
+for i in xrange(0, 10):
+    print(a)
+    a, b = b, a + b
 
+# iterating over different data types
+# tuples and lists are the same
 
+my_tuple = (1, 3, 5, 6, 6)
+my_list = [3, 6, 1, 56]
 
-print()
+for i in my_tuple:
+    print(i)
+
+# --
+
+my_dict = {
+    'name': 'John',
+    'age': '25',
+    'city': 'SF'
+}
+
+for key, val in my_dict.iterateitems():
+    print('My {} is {}').format(key, val)
+
+# --
+
+my_set = {2, 4, 5, 7, 8, 0}
+
+for i in my_set:
+    print(i)
+
+# --
+
+# list comprehensions
+my_list = [1, 2, 3, 4, 5]
+    # task: return list with the numbers squared
+squares = [num*num for num in my_list]
+    print(squares)
+
+# generators (yield is the keyword) - more advanced
+# refactoring fibinacci sequence from above
+def fib(num):
+    a, b = 0, 1
+    for i in range(0, num):
+        yield "{}: {}".format(i+1, a)
+        a, b = b, a + b
+    
+for item in fib(10):
+    print(item)
+
+# xrange v range
+# xrange goes one number at a time
+# range puts the entire range in memory while using it
